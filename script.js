@@ -25,18 +25,23 @@ function viewAdress(){
 }
 window.addEventListener('scroll', viewAdress);
 
-// SIDE BAR OPEN AND CLOSE
+// SIDE BAR OPEN AND CLOSE AND PREVENT SCROLL WHEN SIDEBAR OPENS
 const menuBtn = document.querySelector('#menu');
 const sidebar = document.querySelector('.sidebar');
 const boxShadow = document.querySelector('.box-shadow');
+const body = document.querySelector('body');
 
 menuBtn.addEventListener('click', () => {
     sidebar.style.left = '0';
     boxShadow.style.display = 'block';
+    body.style.overflow = 'hidden';
 })
 
 boxShadow.addEventListener('click', ()=> {
     sidebar.style.left = '-300px';
     boxShadow.style.display = 'none';
+    body.style.overflow = 'scroll';
 })
+
+
 
